@@ -7,7 +7,8 @@ const sass        = require('gulp-sass')
 gulp.task('sass', () => {
     return gulp.src('./src/**/*.scss').
         pipe(sass()).
-        pipe(gulp.dest('./dist/style.css')).
+        pipe(concat('style.css')).
+        pipe(gulp.dest('./dist/')).
         pipe(browserSync.reload({ stream: true }))
 })
 
@@ -45,4 +46,3 @@ gulp.task('watch', ['build', 'sync'], () => {
 })
 
 gulp.task('default', ['watch'])
-
