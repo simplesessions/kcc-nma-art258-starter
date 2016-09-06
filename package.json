@@ -1,0 +1,18 @@
+{
+  "name": "kcc-nma-art258-project",
+  "version": "1.0.0",
+  "description": "KCC NMA ART258 Project",
+  "main": "index.html",
+  "repository": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "KCC Student",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^2.14.3",
+    "gulp-concat": "^2.6.0",
+    "gulp-sass": "^2.3.2"
+  }
+}
