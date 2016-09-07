@@ -2,6 +2,3 @@ node_modules
 dist
 
 # Remove everything below when forking this for a project
-/index.html
-/style.css
-/images
