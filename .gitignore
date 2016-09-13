@@ -1,0 +1,4 @@
+node_modules
+dist
+
+# Remove everything below when forking this for a project
