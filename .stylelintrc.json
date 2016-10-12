@@ -6,6 +6,6 @@
     "stylelint-scss"
   ],
   "rules": {
-    
+    "no-empty-source": null
   }
 }
