@@ -69,6 +69,13 @@ gulp.task('html', () => {
         pipe(browserSync.reload({ stream: true }))
 })
 
+// copy over your JS files
+gulp.task('js', () => {
+    return gulp.src('src/*.js').
+        pipe(gulp.dest('')).
+        pipe(browserSync.reload({ stream: true }))
+})
+
 // copy over all your images
 gulp.task('images', () => {
     return gulp.src('src/images/**/*.{gif,jpg,png}').
@@ -77,7 +84,7 @@ gulp.task('images', () => {
 })
 
 // build everything
-gulp.task('build', ['sass', 'html', 'images'])
+gulp.task('build', ['sass', 'html', 'js', 'images'])
 
 // start watching all your files
 gulp.task('watch', ['build', 'sync'], () => {
