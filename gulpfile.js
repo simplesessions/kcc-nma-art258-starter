@@ -92,6 +92,7 @@ gulp.task('watch', ['build', 'sync'], () => {
 
     gulp.watch('src/scss/**/*.scss', ['sass'])
     gulp.watch('src/**/*.html', ['html'])
+    gulp.watch('src/*.js', ['js'])
     gulp.watch('src/images/**/*.{gif,jpg,png}', ['images'])
 })
 
