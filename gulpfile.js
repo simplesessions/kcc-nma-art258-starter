@@ -4,6 +4,8 @@ const concat      = require('gulp-concat')
 const sass        = require('gulp-sass')
 const stylelint   = require('gulp-stylelint')
 const gutil       = require('gulp-util')
+const postcss     = require('gulp-postcss')
+const pfm         = require('postcss-font-magician')
 const fatalLevel  = require('yargs').argv.fatal
 
 /*********************
@@ -35,8 +37,9 @@ function onWarning(error) { return handleError.call(this, 'warning', error) }
 
 // compile sass
 gulp.task('sass', ['stylelint'], () => {
-    return gulp.src('src/**/*.scss').
+    return gulp.src('src/scss/style.scss').
         pipe(sass().on('error', onError)).
+        pipe(postcss([pfm]).on('error', onError)).
         pipe(concat('style.css')).
         pipe(gulp.dest('')).
         pipe(browserSync.reload({ stream: true }))
