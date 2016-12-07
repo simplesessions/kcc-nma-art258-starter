@@ -1,6 +1,7 @@
 const browserSync = require('browser-sync')
 const gulp        = require('gulp')
 const concat      = require('gulp-concat')
+const pug         = require('gulp-pug')
 const sass        = require('gulp-sass')
 const stylelint   = require('gulp-stylelint')
 const gutil       = require('gulp-util')
@@ -67,7 +68,8 @@ gulp.task('sync', () => {
 
 // copy over your HTML files
 gulp.task('html', () => {
-    return gulp.src('src/**/*.html').
+    return gulp.src('src/**/*.pug').
+        pipe(pug().on('error', onError)).
         pipe(gulp.dest('')).
         pipe(browserSync.reload({ stream: true }))
 })
@@ -94,7 +96,7 @@ gulp.task('watch', ['build', 'sync'], () => {
     global.isWatching = true
 
     gulp.watch('src/scss/**/*.scss', ['sass'])
-    gulp.watch('src/**/*.html', ['html'])
+    gulp.watch('src/**/*.pug', ['html'])
     gulp.watch('src/*.js', ['js'])
     gulp.watch('src/images/**/*.{gif,jpg,png}', ['images'])
 })
